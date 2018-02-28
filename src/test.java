@@ -1,10 +1,9 @@
-
 import org.junit.Test;
 import org.junit.Assert;
 
 public class test {
     @Test
-    public void testValidFrom(){
+    public void testValidFrom() {
 
     }
 
@@ -62,6 +61,7 @@ public class test {
     public void testInvalidWeight() {
 
     }
+
     @Test
     public void testValidTypes() {
 
