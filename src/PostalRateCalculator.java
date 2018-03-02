@@ -12,7 +12,7 @@ public class PostalRateCalculator {
     static String line = "";
     static String cvsSplitBy = ",";
 
-    public static void calculateRate(){
+    public static void readCSV(){
 
         try {
 
@@ -40,4 +40,8 @@ public class PostalRateCalculator {
             }
         }
     }*/
+
+    public static void calculateRate(String params[]) {
+
+    }
 }
