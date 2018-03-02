@@ -4,12 +4,22 @@ import org.junit.Assert;
 public class test {
 
     @Test
-    public void testFewArguments(){
+    public void testFewArguments() {
 
     }
 
     @Test
-    public void testMoreArguments(){
+    public void testMoreArguments() {
+
+    }
+
+    @Test
+    public void testFromValid() {
+
+    }
+
+    @Test
+    public void testToValid() {
 
     }
 
@@ -20,6 +30,16 @@ public class test {
 
     @Test
     public void testLargeRangeLength() {
+
+    }
+
+    @Test
+    public void testSmallRangeHeight() {
+
+    }
+
+    @Test
+    public void testLargeRangeHeight() {
 
     }
 
@@ -50,6 +70,11 @@ public class test {
 
     @Test
     public void testInvalidTypes() {
+
+    }
+
+    @Test
+    public void testTypeValid() {
 
     }
 
