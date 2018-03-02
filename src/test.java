@@ -2,63 +2,44 @@ import org.junit.Test;
 import org.junit.Assert;
 
 public class test {
+
     @Test
-    public void testValidFrom() {
+    public void testFewArguments(){
 
     }
 
     @Test
-    public void testInvalidFrom() {
+    public void testMoreArguments(){
 
     }
 
     @Test
-    public void testInvalidTo() {
+    public void testSmallRangeLength() {
 
     }
 
     @Test
-    public void testValidTo() {
+    public void testLargeRangeLength() {
 
     }
 
     @Test
-    public void testValidLength() {
+    public void testSmallRangeWidth() {
 
     }
 
     @Test
-    public void testInvalidLength() {
+    public void testLargeRangeWidth() {
 
     }
 
     @Test
-    public void testValidWidth() {
+    public void testSmallRangeWeight() {
 
     }
 
     @Test
-    public void testInvalidWidth() {
-
-    }
-
-    @Test
-    public void testValidHeight() {
-
-    }
-
-    @Test
-    public void testInvalidHeight() {
-
-    }
-
-    @Test
-    public void testValidWeight() {
-
-    }
-
-    @Test
-    public void testInvalidWeight() {
+    public void testLargeRangeWeight() {
 
     }
 
@@ -69,6 +50,46 @@ public class test {
 
     @Test
     public void testInvalidTypes() {
+
+    }
+
+    @Test
+    public void testValidRate1() {
+
+    }
+
+    @Test
+    public void testValidRate2() {
+
+    }
+
+    @Test
+    public void testValidRate3() {
+
+    }
+
+    @Test
+    public void testValidRate4() {
+
+    }
+
+    @Test
+    public void testValidRate5() {
+
+    }
+
+    @Test
+    public void testValidRate6() {
+
+    }
+
+    @Test
+    public void testValidRate7() {
+
+    }
+
+    @Test
+    public void testValidRate8() {
 
     }
 }

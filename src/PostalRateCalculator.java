@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class PostalRateCalculator {
 
-
+/*
     static String csvFile = "/Users/edwardson/Desktop/Mcgill/winter2018/tdd_2/rates.csv";
     static BufferedReader br = null;
     static String line = "";
@@ -39,5 +39,5 @@ public class PostalRateCalculator {
                 }
             }
         }
-    }
+    }*/
 }
