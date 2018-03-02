@@ -3,6 +3,8 @@ import org.junit.Assert;
 
 public class test {
 
+    //invalid tests
+
     @Test
     public void testFewArguments() {
 
@@ -77,6 +79,8 @@ public class test {
     public void testTypeValid() {
 
     }
+
+    //valid tests
 
     @Test
     public void testValidRate1() {
