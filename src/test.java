@@ -17,7 +17,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("Regular Shipping type, no error thrown", error, null);
+        Assert.assertEquals("Regular Shipping type, no error thrown", null, error);
 
         params[6] = "Xpress";
         try {
@@ -25,7 +25,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("Xpress Shipping type, no error thrown", error, null);
+        Assert.assertEquals("Xpress Shipping type, no error thrown", null, error);
 
         params[6] = "Regular";
         try {
@@ -33,7 +33,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("Priority Shipping type", error, null);
+        Assert.assertEquals("Priority Shipping type", null, error);
     }
 
     @Test
@@ -90,7 +90,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("not enough arguments check", error, "please insert correct amount of arguments");
+        Assert.assertEquals("not enough arguments check", "please insert correct amount of arguments", error);
     }
 
     @Test
@@ -105,7 +105,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("too many arguments check", error, "please insert correct amount of arguments");
+        Assert.assertEquals("too many arguments check", "please insert correct amount of arguments", error);
     }
 
     @Test
@@ -120,7 +120,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("invalid From Postal Code check", error, "invalid 'From' Postal Code");
+        Assert.assertEquals("invalid From Postal Code check", "invalid 'From' Postal Code", error);
     }
 
     @Test
@@ -135,7 +135,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("invalid To Postal Code check", error, "invalid 'To' Postal Code");
+        Assert.assertEquals("invalid To Postal Code check", "invalid 'To' Postal Code", error);
     }
 
     @Test
@@ -150,7 +150,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("Too small length check", error, params[2] + " is a too small length");
+        Assert.assertEquals("Too small length check", params[2] + " is a too small length", error);
     }
 
     @Test
@@ -165,7 +165,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("Too large length check", error, params[2] + " is a too large length");
+        Assert.assertEquals("Too large length check",params[2] + " is a too large length", error);
     }
 
     @Test
@@ -180,7 +180,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("invalid length check", error, params[2] + " is no a number");
+        Assert.assertEquals("invalid length check", params[2] + " is no a number", error);
     }
 
     @Test
@@ -195,7 +195,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("Too small height check", error, params[3] + " is a too small height");
+        Assert.assertEquals("Too small height check", params[3] + " is a too small height", error);
     }
 
     @Test
@@ -210,7 +210,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("Too large height check", error, params[3] + " is a too large height");
+        Assert.assertEquals("Too large height check", params[3] + " is a too large height", error);
     }
 
     @Test
@@ -225,7 +225,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("invalid height check", error, params[3] + " is no a number");
+        Assert.assertEquals("invalid height check", params[3] + " is no a number", error);
     }
 
     @Test
@@ -240,7 +240,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("Too small width check", error, params[4] + " is a too small width");
+        Assert.assertEquals("Too small width check",params[4] + " is a too small width", error);
     }
 
     @Test
@@ -255,7 +255,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("Too large width check", error, params[4] + " is a too large width");
+        Assert.assertEquals("Too large width check",params[4] + " is a too large width", error);
     }
 
     @Test
@@ -270,7 +270,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("invalid length check", error, params[4] + " is no a number");
+        Assert.assertEquals("invalid length check", params[4] + " is no a number", error);
     }
 
     @Test
@@ -285,7 +285,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("Too small weight check", error, params[5] + " is a too small weight");
+        Assert.assertEquals("Too small weight check",params[5] + " is a too small weight", error);
     }
 
     @Test
@@ -300,7 +300,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("Too large weight check", error, params[5] + " is a too large weight");
+        Assert.assertEquals("Too large weight check",params[5] + " is a too large weight", error);
     }
 
     @Test
@@ -315,7 +315,7 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("invalid weight check", error, params[5] + " is no a number");
+        Assert.assertEquals("invalid weight check", params[5] + " is no a number", error);
     }
 
     @Test
@@ -330,6 +330,6 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("Incorrect Shipping type", error, params[6] + " is not a valid shipping option");
+        Assert.assertEquals("Incorrect Shipping type", params[6] + " is not a valid shipping option", error);
     }
 }
