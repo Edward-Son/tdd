@@ -41,7 +41,11 @@ public class PostalRateCalculator {
         }
     }*/
 
-    public static void calculateRate(String params[]) {
-
+    public static double calculateRate(String params[]) throws Exception {
+        //functionality needs to throw errors at the invalid conditions
+        //throw new Exception("oups");
+        //data passed as string, then convert to double for height, weight, ...
+        //Double.parseDouble(string);
+        return 0;
     }
 }

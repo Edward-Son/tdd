@@ -5,74 +5,146 @@ import org.junit.Assert;
 public class test {
 
     //valid conditions tests
+    //order they appear is order they were done in
     @Test
-    public void validTypes() {
+    public void validTo() {
+        double rate = 0;
         String error =  null;
         String params[] = {
                 "e3f4g5", "h4s3t7", "2.4", "2.0",
                 "2", "10", "Regular",
         };
         try {
-            PostalRateCalculator.calculateRate(params);
+            rate = PostalRateCalculator.calculateRate(params);
+        } catch (Exception e) {
+            error = e.getMessage();
+        }
+        Assert.assertEquals("valid to postal code, no error thrown", null, error);
+        //for now just make it return 9 or some place holder rate when To is valid
+        Assert.assertEquals("Expected Rate", 9, rate, 0);
+    }
+
+    @Test
+    public void validFrom() {
+        double rate = 0;
+        String error =  null;
+        String params[] = {
+                "e3f4g5", "h4s3t7", "2.4", "2.0",
+                "2", "10", "Regular",
+        };
+        try {
+            rate = PostalRateCalculator.calculateRate(params);
+        } catch (Exception e) {
+            error = e.getMessage();
+        }
+        Assert.assertEquals("valid from postal code, no error thrown", null, error);
+        Assert.assertEquals("Expected Rate", 9, rate, 0);
+    }
+
+    @Test
+    public void validWeight() {
+        //fix so that rate it outputs is what we want
+        double rate = 0;
+        String error =  null;
+        String params[] = {
+                "e3f4g5", "h4s3t7", "2.4", "2.0",
+                "2", "10", "Regular",
+        };
+        try {
+            rate = PostalRateCalculator.calculateRate(params);
+        } catch (Exception e) {
+            error = e.getMessage();
+        }
+        Assert.assertEquals("proper weight, no error thrown", null, error);
+        Assert.assertEquals("Expected Rate based on weight", 9, rate, 0);
+    }
+
+    @Test
+    public void validHeight() {
+        double rate = 0;
+        String error =  null;
+        String params[] = {
+                "e3f4g5", "h4s3t7", "2.4", "2.0",
+                "2", "10", "Regular",
+        };
+        try {
+            rate = PostalRateCalculator.calculateRate(params);
+        } catch (Exception e) {
+            error = e.getMessage();
+        }
+        Assert.assertEquals("valid height, no error thrown", null, error);
+        Assert.assertEquals("Expected Rate", 9, rate, 0);
+
+    }
+
+    @Test
+    public void validLength() {
+        double rate = 0;
+        String error =  null;
+        String params[] = {
+                "e3f4g5", "h4s3t7", "2.4", "2.0",
+                "2", "10", "Regular",
+        };
+        try {
+            rate = PostalRateCalculator.calculateRate(params);
+        } catch (Exception e) {
+            error = e.getMessage();
+        }
+        Assert.assertEquals("valid length, no error thrown", null, error);
+        Assert.assertEquals("Expected Rate", 9, rate, 0);
+    }
+
+    @Test
+    public void validWidth() {
+        double rate = 0;
+        String error =  null;
+        String params[] = {
+                "e3f4g5", "h4s3t7", "2.4", "2.0",
+                "2", "10", "Regular",
+        };
+        try {
+            rate = PostalRateCalculator.calculateRate(params);
+        } catch (Exception e) {
+            error = e.getMessage();
+        }
+        Assert.assertEquals("valid width, no error thrown", null, error);
+        Assert.assertEquals("Expected Rate", 9, rate, 0);
+    }
+
+    @Test
+    public void validTypes() {
+        double rate = 0;
+        String error =  null;
+        String params[] = {
+                "e3f4g5", "h4s3t7", "2.4", "2.0",
+                "2", "10", "Regular",
+        };
+        try {
+            rate = PostalRateCalculator.calculateRate(params);
         } catch (Exception e) {
             error = e.getMessage();
         }
         Assert.assertEquals("Regular Shipping type, no error thrown", null, error);
+        Assert.assertEquals("Expected Rate", 9, rate, 0);
 
         params[6] = "Xpress";
         try {
-            PostalRateCalculator.calculateRate(params);
+            rate = PostalRateCalculator.calculateRate(params);
         } catch (Exception e) {
             error = e.getMessage();
         }
         Assert.assertEquals("Xpress Shipping type, no error thrown", null, error);
+        Assert.assertEquals("Expected Rate", 9, rate, 0);
+
 
         params[6] = "Regular";
         try {
-            PostalRateCalculator.calculateRate(params);
+            rate = PostalRateCalculator.calculateRate(params);
         } catch (Exception e) {
             error = e.getMessage();
         }
         Assert.assertEquals("Priority Shipping type", null, error);
-    }
-
-    @Test
-    public void validRate1() {
-
-    }
-
-    @Test
-    public void validRate2() {
-
-    }
-
-    @Test
-    public void validRate3() {
-
-    }
-
-    @Test
-    public void validRate4() {
-
-    }
-
-    @Test
-    public void validRate5() {
-
-    }
-
-    @Test
-    public void validRate6() {
-
-    }
-
-    @Test
-    public void validRate7() {
-
-    }
-
-    @Test
-    public void validRate8() {
+        Assert.assertEquals("Expected Rate", 9, rate, 0);
 
     }
 
