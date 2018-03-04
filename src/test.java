@@ -1,6 +1,5 @@
-import org.junit.BeforeClass;
-import org.junit.Test;
 import org.junit.Assert;
+import org.junit.Test;
 
 public class test {
 
@@ -12,8 +11,8 @@ public class test {
         double rate = 0;
         String error =  null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.4", "2.0",
-                "2", "10", "Regular",
+                "e3f4g5", "h4s3t7", "100", "100",
+                "100", "10", "Regular",
         };
         try {
             rate = PostalRateCalculator.calculateRate(params);
@@ -30,8 +29,8 @@ public class test {
         double rate = 0;
         String error =  null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.4", "2.0",
-                "2", "10", "Regular",
+                "e3f4g5", "h4s3t7", "100", "100",
+                "100", "10", "Regular",
         };
         try {
             rate = PostalRateCalculator.calculateRate(params);
@@ -48,8 +47,8 @@ public class test {
         double rate = 0;
         String error =  null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.4", "2.0",
-                "2", "10", "Regular",
+                "e3f4g5", "h4s3t7", "100", "100",
+                "100", "10", "Regular",
         };
         try {
             rate = PostalRateCalculator.calculateRate(params);
@@ -65,8 +64,8 @@ public class test {
         double rate = 0;
         String error =  null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.4", "2.0",
-                "2", "10", "Regular",
+                "e3f4g5", "h4s3t7", "100", "100",
+                "100", "10", "Regular",
         };
         try {
             rate = PostalRateCalculator.calculateRate(params);
@@ -83,8 +82,8 @@ public class test {
         double rate = 0;
         String error =  null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.4", "2.0",
-                "2", "10", "Regular",
+                "e3f4g5", "h4s3t7", "100", "100",
+                "100", "10", "Regular",
         };
         try {
             rate = PostalRateCalculator.calculateRate(params);
@@ -100,8 +99,8 @@ public class test {
         double rate = 0;
         String error =  null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.4", "2.0",
-                "2", "10", "Regular",
+                "e3f4g5", "h4s3t7", "100", "100",
+                "100", "10", "Regular",
         };
         try {
             rate = PostalRateCalculator.calculateRate(params);
@@ -117,8 +116,8 @@ public class test {
         double rate = 0;
         String error =  null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.4", "2.0",
-                "2", "10", "Regular",
+                "e3f4g5", "h4s3t7", "100", "100",
+                "100", "10", "Regular",
         };
         try {
             rate = PostalRateCalculator.calculateRate(params);
@@ -185,8 +184,8 @@ public class test {
     public void fromInvalid() {
         String error = null;
         String params[] = {
-                "invalid", "e3f4g5", "2.2", "2.4",
-                "2.5", "10", "Priority",
+                "invalid", "e3f4g5", "22", "24",
+                "25", "10", "Priority",
         };
         try {
             PostalRateCalculator.calculateRate(params);
@@ -200,8 +199,8 @@ public class test {
     public void toInvalid() {
         String error = null;
         String params[] = {
-                "e3f4g5", "invalid", "2.2", "2.4",
-                "2.5", "10", "Priority",
+                "e3f4g5", "invalid", "22", "24",
+                "25", "10", "Priority",
         };
         try {
             PostalRateCalculator.calculateRate(params);
@@ -215,8 +214,8 @@ public class test {
     public void lengthOutOfLowerBounds() {
         String error = null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "0.1", "2.4",
-                "2.5", "10", "Priority",
+                "e3f4g5", "h4s3t7", "0.1", "24",
+                "25", "10", "Priority",
         };
         try {
             PostalRateCalculator.calculateRate(params);
@@ -230,8 +229,8 @@ public class test {
     public void lengthOutOfUpperBounds() {
         String error = null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "100", "2.4",
-                "2.5", "10", "Priority",
+                "e3f4g5", "h4s3t7", "1000", "24",
+                "25", "10", "Priority",
         };
         try {
             PostalRateCalculator.calculateRate(params);
@@ -245,23 +244,23 @@ public class test {
     public void invalidLength() {
         String error = null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "not a number", "2.4",
-                "2.5", "10", "Priority",
+                "e3f4g5", "h4s3t7", "not a number", "24",
+                "25", "10", "Priority",
         };
         try {
             PostalRateCalculator.calculateRate(params);
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("invalid length check", params[2] + " is no a number", error);
+        Assert.assertEquals("invalid length check", params[2] + " is not a number", error);
     }
 
     @Test
     public void heightOutOfLowerBounds() {
         String error = null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.4", "0.2",
-                "2.5", "10", "Priority",
+                "e3f4g5", "h4s3t7", "24", "0.2",
+                "25", "10", "Priority",
         };
         try {
             PostalRateCalculator.calculateRate(params);
@@ -275,8 +274,8 @@ public class test {
     public void heightOutOfUpperBounds() {
         String error = null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.4", "1000",
-                "2.5", "10", "Priority",
+                "e3f4g5", "h4s3t7", "24", "1000",
+                "25", "10", "Priority",
         };
         try {
             PostalRateCalculator.calculateRate(params);
@@ -290,22 +289,22 @@ public class test {
     public void invalidHeight() {
         String error = null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.2", "not a number",
-                "2.5", "10", "Priority",
+                "e3f4g5", "h4s3t7", "22", "not a number",
+                "25", "10", "Priority",
         };
         try {
             PostalRateCalculator.calculateRate(params);
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("invalid height check", params[3] + " is no a number", error);
+        Assert.assertEquals("invalid height check", params[3] + " is not a number", error);
     }
 
     @Test
     public void widthOutOfLowerBounds() {
         String error = null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.4", "2.0",
+                "e3f4g5", "h4s3t7", "24", "20",
                 "0.01", "10", "Priority",
         };
         try {
@@ -320,7 +319,7 @@ public class test {
     public void widthOutOfUpperBounds() {
         String error = null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.4", "2.0",
+                "e3f4g5", "h4s3t7", "24", "20",
                 "8934893", "10", "Priority",
         };
         try {
@@ -335,7 +334,7 @@ public class test {
     public void invalidWidth() {
         String error = null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.0", "2.4",
+                "e3f4g5", "h4s3t7", "20", "24",
                 "wrong", "10", "Priority",
         };
         try {
@@ -343,15 +342,15 @@ public class test {
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("invalid length check", params[4] + " is no a number", error);
+        Assert.assertEquals("invalid length check", params[4] + " is not a number", error);
     }
 
     @Test
     public void weightOutOfLowerBounds() {
         String error = null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.4", "2.0",
-                "2.0", "0.1", "Priority",
+                "e3f4g5", "h4s3t7", "24", "20",
+                "20", "0", "Priority",
         };
         try {
             PostalRateCalculator.calculateRate(params);
@@ -365,8 +364,8 @@ public class test {
     public void weightOutOfUpperBounds() {
         String error = null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.4", "2.0",
-                "2", "1000000", "Priority",
+                "e3f4g5", "h4s3t7", "24", "20",
+                "20", "1000000", "Priority",
         };
         try {
             PostalRateCalculator.calculateRate(params);
@@ -380,23 +379,23 @@ public class test {
     public void invalidWeight() {
         String error = null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.0", "2.4",
-                "2.5", "not number", "Priority",
+                "e3f4g5", "h4s3t7", "20", "24",
+                "25", "not number", "Priority",
         };
         try {
             PostalRateCalculator.calculateRate(params);
         } catch (Exception e) {
             error = e.getMessage();
         }
-        Assert.assertEquals("invalid weight check", params[5] + " is no a number", error);
+        Assert.assertEquals("invalid weight check", params[5] + " is not a number", error);
     }
 
     @Test
     public void invalidTypes() {
         String error = null;
         String params[] = {
-                "e3f4g5", "h4s3t7", "2.4", "2.0",
-                "2", "10", "Something Else",
+                "e3f4g5", "h4s3t7", "24", "20",
+                "20", "10", "Something Else",
         };
         try {
             PostalRateCalculator.calculateRate(params);
