@@ -41,6 +41,7 @@ public class PostalRateCalculator {
         }
     }*/
 
+    //params[] = from, to, length, height, width, weight, type
     public static double calculateRate(String params[]) throws Exception {
         //functionality needs to throw errors at the invalid conditions
         //throw new Exception("oups");

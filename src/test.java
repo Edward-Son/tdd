@@ -6,6 +6,7 @@ public class test {
 
     //valid conditions tests
     //order they appear is order they were done in
+    //from, to, length, height, width, weight, type
     @Test
     public void validTo() {
         double rate = 0;
