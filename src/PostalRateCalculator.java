@@ -135,7 +135,16 @@ public class PostalRateCalculator {
             }
         }
 
+
         rateTotal = Double.parseDouble(params[5]) * rateValue;
+        if(params[6].equals("Xpress")){
+            rateTotal+= 4;
+        }
+
+        if(params[6].equals("Priority")){
+            rateTotal+=20;
+        }
+
         System.out.println(rateTotal);
         return rateTotal;
 
