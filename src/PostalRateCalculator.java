@@ -8,15 +8,6 @@ public class PostalRateCalculator {
     //params[] = from, to, length, height, width, weight, type
     public static double calculateRate(String params[]) throws Exception {
 
-        String csvFile = "src/rates.csv";
-        BufferedReader br = null;
-        String line = "";
-        String cvsSplitBy = ",";
-        String[] rate = new String[0];
-        Double rateValue = null;
-        Double rateTotal = null;
-
-
         if (params.length != 7) {
             throw new Exception("please insert correct amount of arguments");
         }
@@ -53,7 +44,7 @@ public class PostalRateCalculator {
             }
         }
 
-        //check if valid number
+//check if valid number
         try {
             Double.parseDouble(params[2]);
         } catch (NumberFormatException nfe) {
@@ -61,11 +52,11 @@ public class PostalRateCalculator {
         }
         if (Double.parseDouble(params[2]) < 10) {
             throw new Exception(params[2] + " is a too small length");
-        }else if (Double.parseDouble(params[2]) > 210) {
+        } else if (Double.parseDouble(params[2]) > 210) {
             throw new Exception(params[2] + " is a too large length");
         }
 
-        //check if valid number
+//check if valid number
         try {
             Double.parseDouble(params[3]);
         } catch (NumberFormatException nfe) {
@@ -77,7 +68,7 @@ public class PostalRateCalculator {
             throw new Exception(params[3] + " is a too large height");
         }
 
-        //check if valid number
+//check if valid number
         try {
             Double.parseDouble(params[4]);
         } catch (NumberFormatException nfe) {
@@ -89,7 +80,7 @@ public class PostalRateCalculator {
             throw new Exception(params[4] + " is a too large width");
         }
 
-        //check if valid number
+//check if valid number
         try {
             Double.parseDouble(params[5]);
         } catch (NumberFormatException nfe) {
@@ -105,6 +96,14 @@ public class PostalRateCalculator {
             throw new Exception(params[6] + " is not a valid shipping option");
         }
 
+        String csvFile = "src/rates.csv";
+        BufferedReader br = null;
+        String line = "";
+        String cvsSplitBy = ",";
+        String[] rate = new String[0];
+        Double rateValue = null;
+        Double rateTotal = null;
+
         try {
 
             br = new BufferedReader(new FileReader(csvFile));
@@ -113,9 +112,12 @@ public class PostalRateCalculator {
                 // use comma as separator
                 rate = line.split(cvsSplitBy);
 
+                //System.out.println(Arrays.toString(rate));
+
                 for (int i=0; i< rate.length; i++){
-                    if (params[0].equals(rate[i]) && params[1].equals(rate[i+1])){
+                    if (params[0].equals(rate[i])){
                         rateValue = Double.parseDouble(rate[i+11]);
+                        System.out.println(rateValue);
                         break;
                     }
                 }
@@ -134,14 +136,8 @@ public class PostalRateCalculator {
         }
 
         rateTotal = Double.parseDouble(params[5]) * rateValue;
-
-        if(params[6].equals("Xpress")){
-            rateTotal+= 4;
-        }
-
-        if(params[6].equals("Priority")){
-            rateTotal+=20;
-        }
+        System.out.println(rateTotal);
         return rateTotal;
+
     }
 }
