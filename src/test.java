@@ -7,7 +7,24 @@ public class test {
     //order they appear is order they were done in
     //from, to, length, height, width, weight, type
     @Test
-    public void validTo() {
+    public void validCSVRead() {
+        double rate = 0;
+        String error =  null;
+        String params[] = {
+                "V9A1A1", "H1Y1A1", "25", "50",
+                "90", "20", "Regular",
+        };
+        try {
+            rate = PostalRateCalculator.calculateRate(params);
+        } catch (Exception e) {
+            error = e.getMessage();
+        }
+        Assert.assertNotEquals("valid to postal code, no error thrown", "I/O", error);
+        Assert.assertEquals("Expected Rate", 0, rate, 0);
+    }
+
+    @Test
+    public void validPostal() {
         double rate = 0;
         String error =  null;
         String params[] = {
@@ -20,11 +37,11 @@ public class test {
             error = e.getMessage();
         }
         Assert.assertEquals("valid to postal code, no error thrown", null, error);
-        Assert.assertEquals("Expected Rate", 32.38, rate, 0);
+        Assert.assertEquals("Expected Rate", 1, rate, 0);
     }
 
     @Test
-    public void validFrom() {
+    public void validDimensions() {
         double rate = 0;
         String error =  null;
         String params[] = {
@@ -37,76 +54,6 @@ public class test {
             error = e.getMessage();
         }
         Assert.assertEquals("valid from postal code, no error thrown", null, error);
-        Assert.assertEquals("Expected Rate", 22.98, rate, 0);
-    }
-
-    @Test
-    public void validWeight() {
-        //fix so that rate it outputs is what we want
-        double rate = 0;
-        String error =  null;
-        String params[] = {
-                "B3H1A1", "H1Y1A1", "25", "50",
-                "90", "20", "Priority",
-        };
-        try {
-            rate = PostalRateCalculator.calculateRate(params);
-        } catch (Exception e) {
-            error = e.getMessage();
-        }
-        Assert.assertEquals("proper weight, no error thrown", null, error);
-        Assert.assertEquals("Expected Rate based on weight", 19.28, rate, 0);
-    }
-
-    @Test
-    public void validHeight() {
-        double rate = 0;
-        String error =  null;
-        String params[] = {
-                "S4P1A1", "H1Y1A1", "25", "50",
-                "90", "20", "Xpress",
-        };
-        try {
-            rate = PostalRateCalculator.calculateRate(params);
-        } catch (Exception e) {
-            error = e.getMessage();
-        }
-        Assert.assertEquals("valid height, no error thrown", null, error);
-        Assert.assertEquals("Expected Rate", 22.98, rate, 0);
-
-    }
-
-    @Test
-    public void validLength() {
-        double rate = 0;
-        String error =  null;
-        String params[] = {
-                "T6X1A1", "H1Y1A1", "25", "50",
-                "90", "20", "Xpress",
-        };
-        try {
-            rate = PostalRateCalculator.calculateRate(params);
-        } catch (Exception e) {
-            error = e.getMessage();
-        }
-        Assert.assertEquals("valid length, no error thrown", null, error);
-        Assert.assertEquals("Expected Rate", 22.98, rate, 0);
-    }
-
-    @Test
-    public void validWidth() {
-        double rate = 0;
-        String error =  null;
-        String params[] = {
-                "A1B1A1", "H1Y1A1", "25", "50",
-                "90", "20", "Xpress",
-        };
-        try {
-            rate = PostalRateCalculator.calculateRate(params);
-        } catch (Exception e) {
-            error = e.getMessage();
-        }
-        Assert.assertEquals("valid width, no error thrown", null, error);
         Assert.assertEquals("Expected Rate", 22.98, rate, 0);
     }
 
@@ -401,22 +348,5 @@ public class test {
             error = e.getMessage();
         }
         Assert.assertEquals("Incorrect Shipping type", params[6] + " is not a valid shipping option", error);
-    }
-
-    @Test
-    public void validCSVRead(){
-        double rate = 0;
-        String error =  null;
-        String params[] = {
-                "R2C1A1", "H1Y1A1", "25", "50",
-                "90", "20", "Xpress",
-        };
-        try {
-            rate = PostalRateCalculator.calculateRate(params);
-        } catch (Exception e) {
-            error = e.getMessage();
-        }
-        Assert.assertEquals("valid to postal code, no error thrown", null, error);
-        Assert.assertEquals("Expected Rate", 19.28, rate, 0);
     }
 }
