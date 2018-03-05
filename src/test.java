@@ -20,7 +20,7 @@ public class test {
             error = e.getMessage();
         }
         Assert.assertNotEquals("valid to postal code, no error thrown", "I/O", error);
-        Assert.assertEquals("Expected Rate", 0, rate, 0);
+        Assert.assertEquals("Expected Rate", 32.38, rate, 0);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class test {
             error = e.getMessage();
         }
         Assert.assertEquals("valid to postal code, no error thrown", null, error);
-        Assert.assertEquals("Expected Rate", 1, rate, 0);
+        Assert.assertEquals("Expected Rate", 32.38, rate, 0);
     }
 
     @Test
@@ -54,7 +54,7 @@ public class test {
             error = e.getMessage();
         }
         Assert.assertEquals("valid from postal code, no error thrown", null, error);
-        Assert.assertEquals("Expected Rate", 22.98, rate, 0);
+        Assert.assertEquals("Expected Rate", 26.98, rate, 0);
     }
 
     @Test
@@ -80,17 +80,17 @@ public class test {
             error = e.getMessage();
         }
         Assert.assertEquals("Xpress Shipping type, no error thrown", null, error);
-        Assert.assertEquals("Expected Rate", 19.28, rate, 0);
+        Assert.assertEquals("Expected Rate", 23.28, rate, 0);
 
 
-        params[6] = "Regular";
+        params[6] = "Priority";
         try {
             rate = PostalRateCalculator.calculateRate(params);
         } catch (Exception e) {
             error = e.getMessage();
         }
         Assert.assertEquals("Priority Shipping type", null, error);
-        Assert.assertEquals("Expected Rate", 19.28, rate, 0);
+        Assert.assertEquals("Expected Rate", 39.28, rate, 0);
 
     }
 
