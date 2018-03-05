@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class PostalRateCalculator {
 
 
@@ -91,6 +95,46 @@ public class PostalRateCalculator {
         if (!params[6].equals("Regular") && !params[6].equals("Xpress") && !params[6].equals("Priority")) {
             throw new Exception(params[6] + " is not a valid shipping option");
         }
-        return 9;
+
+        String csvFile = "src/rates.csv";
+        BufferedReader br = null;
+        String line = "";
+        String cvsSplitBy = ",";
+        String[] rate = new String[0];
+        Double rateValue = null;
+        Double rateTotal = null;
+
+        try {
+
+            br = new BufferedReader(new FileReader(csvFile));
+            while ((line = br.readLine()) != null) {
+
+                // use comma as separator
+                rate = line.split(cvsSplitBy);
+
+                for (int i=0; i< rate.length; i++){
+                    if (params[0].equals(rate[i]) && params[1].equals(rate[i+1])){
+                        rateValue = Double.parseDouble(rate[i+11]);
+                        System.out.println(rateValue);
+                        break;
+                    }
+                }
+            }
+
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        rateTotal = Double.parseDouble(params[5]) * rateValue;
+        System.out.println(rateTotal);
+        return rateTotal;
     }
 }
